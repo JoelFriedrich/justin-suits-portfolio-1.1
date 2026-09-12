@@ -1,0 +1,12 @@
+# Static site — no build step. Netlify publishes the repo root as-is.
+[build]
+  publish = "."
+
+# The page file is "Justin Suits.dc.html" (the Claude Design canvas source).
+# Serve it at the site root with a rewrite (status 200) rather than a redirect,
+# so the visitor's URL stays "/" and the page's relative paths
+# (support.js, assets/*.jpg) resolve against the root.
+[[redirects]]
+  from = "/"
+  to = "/Justin%20Suits.dc.html"
+  status = 200

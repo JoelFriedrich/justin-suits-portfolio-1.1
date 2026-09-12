@@ -25,3 +25,12 @@ python3 -m http.server 8000
 ```
 
 Then visit http://localhost:8000/Justin%20Suits.dc.html
+
+## Deploying to Netlify
+
+Connect the repo in Netlify — no build command, no publish directory to set;
+`netlify.toml` configures both. It rewrites `/` to `Justin Suits.dc.html` so
+the site root serves the page while keeping the design-canvas filename.
+
+The page loads React and (when needed) Babel from unpkg at runtime, and fonts
+from Google Fonts, so it needs network access to render the interactive nav.
